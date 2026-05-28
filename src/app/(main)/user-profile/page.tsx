@@ -27,18 +27,18 @@ export default async function UserProfilePage() {
   return (
     <div className='mx-auto max-w-7xl px-4 py-8'>
       <div className='mb-8'>
-        <h1 className='text-3xl font-bold text-accent-400 dark:text-accent-400'>پـروفایـل کاربـری</h1>
+        <h1 className='text-3xl font-bold text-accent-600 dark:text-accent-400'>پـروفایـل کاربـری</h1>
 
         <p className='mt-2 text-gray-600 dark:text-primary-200'>مدیریت اطلاعات حساب ، رزروها و تنظیمات شما</p>
       </div>
 
       <div className='grid gap-6 lg:grid-cols-3'>
         <div className='lg:col-span-1'>
-          <div className='rounded-2xl bg-white p-6 shadow-inner shadow-black dark:bg-primary-900'>
+          <div className='rounded-2xl bg-white p-6 shadow-inner shadow-black/60 dark:bg-primary-900 dark:shadow-black'>
             <div className='flex flex-col items-center'>
               <Link
                 href='/user-profile/edit-profile'
-                className='flex size-28 items-center justify-center rounded-full bg-accent-400 text-7xl shadow-xl shadow-black/80 active:scale-90 active:shadow-inner active:shadow-black dark:bg-primary-800/40'
+                className='flex size-28 items-center justify-center rounded-full bg-accent-100 text-7xl shadow-xl shadow-black/40 active:scale-90 active:shadow-inner active:shadow-black dark:bg-primary-800/40 dark:shadow-black/80'
               >
                 <FaUser className='text-accent-500' />
               </Link>
@@ -46,7 +46,7 @@ export default async function UserProfilePage() {
 
             <div className='mt-9 space-y-4 border-t-2 border-primary-800 pt-6'>
               <div className='flex items-center gap-1'>
-                <LuDiamond className='h-5 w-5 text-accent-400' />
+                <LuDiamond className='h-5 w-5 text-accent-600 dark:text-accent-400' />
 
                 <div className='flex gap-1'>
                   <p className='text-xs text-gray-500 dark:text-primary-400'>نام شما:</p>
@@ -56,7 +56,7 @@ export default async function UserProfilePage() {
               </div>
 
               <div className='flex items-center gap-1'>
-                <LuDiamond className='h-5 w-5 text-accent-400' />
+                <LuDiamond className='h-5 w-5 text-accent-600 dark:text-accent-400' />
 
                 <div className='flex gap-1'>
                   <p className='text-xs text-gray-500 dark:text-primary-400'>نام کاربری:</p>
@@ -66,7 +66,7 @@ export default async function UserProfilePage() {
               </div>
 
               <div className='flex items-center gap-1'>
-                <LuDiamond className='h-5 w-5 text-accent-400' />
+                <LuDiamond className='h-5 w-5 text-accent-600 dark:text-accent-400' />
 
                 <div className='flex gap-1'>
                   <p className='text-xs text-gray-500 dark:text-primary-400'>بیوگرافی:</p>
@@ -77,13 +77,13 @@ export default async function UserProfilePage() {
             </div>
 
             <div className='mt-6 flex items-center justify-center'>
-              <Link href='/user-profile/edit-profile' className='inline w-full py-2.5 text-center font-bold text-accent-400'>
+              <Link href='/user-profile/edit-profile' className='inline w-full py-2.5 text-center font-bold text-accent-600 dark:text-accent-400'>
                 <span>ویـرایـش پـروفایل</span>
               </Link>
 
               <div className='mr-1 h-6 w-[3px] rounded-full bg-accent-500' />
 
-              <LogoutButton className='inline w-full py-2.5 text-center font-bold text-accent-400'>
+              <LogoutButton className='inline w-full py-2.5 text-center font-bold text-accent-600 dark:text-accent-400'>
                 <span>خــروج از حـساب</span>
               </LogoutButton>
             </div>

@@ -80,25 +80,25 @@ export default function DatePicker({ room }: DatePickerProps) {
 
   return (
     <>
-      <div dir='rtl' className='mx-auto w-80 select-none rounded-lg bg-primary-900 p-4 shadow-xl shadow-black/80'>
+      <div dir='rtl' className='mx-auto w-80 select-none rounded-lg bg-primary-200 p-4 shadow-xl shadow-black/80 dark:bg-primary-900'>
         {/* هدر */}
         <div className='mb-4 flex items-center justify-between'>
           <button onClick={goToNextMonth} className='rounded px-2 py-1 text-xl'>
-            <BiRightArrow className='text-3xl text-accent-400' />
+            <BiRightArrow className='text-3xl text-accent-600 dark:text-accent-400' />
           </button>
 
           {/* ماه */}
-          <h2 className='text-lg font-semibold text-accent-400'>
+          <h2 className='text-lg font-semibold text-accent-600 dark:text-accent-400'>
             {persianMonths[persianMonth]} {toPersianDigits(String(persianYear))}
           </h2>
 
           <button onClick={goToPrevMonth} className='rounded px-2 py-1 text-xl'>
-            <BiLeftArrow className='text-3xl text-accent-400' />
+            <BiLeftArrow className='text-3xl text-accent-600 dark:text-accent-400' />
           </button>
         </div>
 
         {/* روزهای هفته */}
-        <div className='mb-2 grid grid-cols-7 gap-1 border-b border-primary-700 pb-3 text-center text-sm font-medium text-primary-300'>
+        <div className='mb-2 grid grid-cols-7 gap-1 border-b border-primary-700 pb-3 text-center text-sm font-medium text-primary-700 dark:text-primary-300'>
           {weekDays.map((day, idx) => (
             <div key={idx}>{day}</div>
           ))}
@@ -118,7 +118,7 @@ export default function DatePicker({ room }: DatePickerProps) {
                 key={formatted}
                 onClick={() => toggleDate(date)}
                 className={`relative flex h-10 items-center justify-center rounded text-sm ${
-                  isSelected ? 'bg-accent-500 font-bold text-primary-900' : 'text-primary-300'
+                  isSelected ? 'bg-accent-500 font-bold text-primary-900' : 'text-primary-700 dark:text-primary-300'
                 }`}
               >
                 {toPersianDigits(format(date, 'd'))}
@@ -135,14 +135,17 @@ export default function DatePicker({ room }: DatePickerProps) {
         {/* نمایش برچسب تاریخ‌های انتخاب شده */}
         {selectedDates.length > 0 && (
           <div className='mt-4 space-y-2 border-t-2 border-primary-800 pt-4 text-right text-sm text-gray-600'>
-            <div className='flex items-center gap-1 text-primary-300'>
+            <div className='flex items-center gap-1 text-primary-700 dark:text-primary-300'>
               <LuCalendar className='text-xl' />
               <span>تاریخ‌ های انتخاب‌ شده</span>
             </div>
 
             <div className='flex flex-wrap gap-1'>
               {selectedDates.map((d) => (
-                <span key={d} className='inline-flex items-center gap-1 rounded-full bg-primary-800 px-2 py-1 text-xs font-bold text-primary-300'>
+                <span
+                  key={d}
+                  className='inline-flex items-center gap-1 rounded-full bg-white px-2 py-1 text-[11px] font-bold text-primary-700 dark:bg-primary-800 dark:text-primary-300'
+                >
                   <button onClick={() => removeDate(d)} className='hover:text-red-600'>
                     {toPersianDigits(d)}
 

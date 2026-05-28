@@ -27,15 +27,15 @@ export default function Header() {
 
       <div className='hidden lg:block'>
         <div className='text-xl text-white lg:flex lg:gap-24 lg:pl-4 xl:pl-16'>
-          <Link href='/user-profile' className='flex items-center gap-2 hover:scale-105 dark:text-primary-200'>
+          <Link href='/user-profile' className='flex items-center gap-2 text-black hover:scale-105 dark:text-primary-200'>
             <span className={path.startsWith('/user-profile') ? 'border-b-2 border-accent-400 p-2' : ''}>پروفایل من</span>
           </Link>
 
-          <Link href='/rooms' className='flex items-center gap-2 hover:scale-105 dark:text-primary-200'>
+          <Link href='/rooms' className='flex items-center gap-2 text-black hover:scale-105 dark:text-primary-200'>
             <span className={path.startsWith('/rooms') ? 'border-b-2 border-accent-400 p-2' : ''}>دیدن اتاق‌ها</span>
           </Link>
 
-          <Link href='/about' className='flex items-center gap-2 hover:scale-105 dark:text-primary-200'>
+          <Link href='/about' className='flex items-center gap-2 text-black hover:scale-105 dark:text-primary-200'>
             <span className={path.startsWith('/about') ? 'border-b-2 border-accent-400 p-2' : ''}>درباره ما</span>
           </Link>
 

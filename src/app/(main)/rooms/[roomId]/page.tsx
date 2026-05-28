@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-// components
 import NotFoundRoom from '@/components/rooms/not-found-room';
 import { type Room } from '@/lib/db';
 import { getRoom } from '@/lib/utils';
@@ -35,7 +34,7 @@ export default async function DynamicRoomPage({ params }: ParamsType) {
     <div className='mx-auto max-w-7xl px-4 py-8'>
       {/* لینک بازگشت */}
       <Link href='/rooms' className='mb-6 inline-flex items-center gap-2 text-sm text-primary-600 dark:text-primary-300'>
-        <div className='flex items-center gap-1 rounded-full bg-primary-900 px-5 py-2 text-primary-300 shadow-xl shadow-black/80'>
+        <div className='flex items-center gap-1 rounded-full px-5 py-2 text-primary-700 shadow-xl shadow-black/40 dark:bg-primary-900 dark:text-primary-300 dark:shadow-black/80'>
           <span>بازگشت به لیست اتاق‌ها</span>
           <BsArrowLeft />
         </div>
@@ -44,7 +43,7 @@ export default async function DynamicRoomPage({ params }: ParamsType) {
       {/* کارت اصلی */}
       <div className='grid gap-6 md:grid-cols-2 md:gap-10'>
         {/* تصویر */}
-        <div className='relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-xl shadow-black/80'>
+        <div className='relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-xl shadow-black/40 dark:shadow-black/80'>
           <Image
             src={room.image}
             alt={`اتاق شماره ${room.roomNumber}`}
@@ -60,7 +59,7 @@ export default async function DynamicRoomPage({ params }: ParamsType) {
           <div className='space-y-5'>
             {/* عنوان و ظرفیت */}
             <div>
-              <h1 className='flex items-center gap-2 text-xl font-bold text-accent-400'>
+              <h1 className='flex items-center gap-2 text-xl font-bold text-accent-600 dark:text-accent-400'>
                 <FaHome />
                 <span>اتــاق شـمـاره</span>
                 <span>{room.roomNumber.toLocaleString('fa-IR')}</span>
@@ -74,10 +73,10 @@ export default async function DynamicRoomPage({ params }: ParamsType) {
             </div>
 
             {/* قیمت */}
-            <div className='rounded-xl bg-accent-50/80 p-4 text-lg shadow-xl shadow-black/40 dark:bg-primary-900'>
-              <span className='font-bold text-accent-400'>{room.price.toLocaleString('fa-IR')}</span>
+            <div className='rounded-xl bg-accent-50/80 p-4 text-lg shadow-xl shadow-black/20 dark:bg-primary-900 dark:shadow-black/40'>
+              <span className='font-bold text-accent-600 dark:text-accent-400'>{room.price.toLocaleString('fa-IR')}</span>
 
-              <span className='mr-1 text-lg text-accent-400'>تومان</span>
+              <span className='mr-1 text-lg text-accent-600 dark:text-accent-400'>تومان</span>
 
               <span className='text-gray-500 dark:text-primary-300'> / هر شب</span>
             </div>
@@ -87,7 +86,7 @@ export default async function DynamicRoomPage({ params }: ParamsType) {
 
             {/* امکانات */}
             <div>
-              <h3 className='mb-3 flex items-center gap-1 text-lg font-semibold text-accent-400'>
+              <h3 className='mb-3 flex items-center gap-1 text-lg font-semibold text-accent-600 dark:text-accent-400'>
                 <IoSparklesSharp />
                 <span>امکانات ویژه</span>
               </h3>
@@ -107,7 +106,7 @@ export default async function DynamicRoomPage({ params }: ParamsType) {
 
           <div className='mt-12'>
             <div className='mb-5'>
-              <h1 className='flex items-center gap-1 font-bold text-accent-400'>
+              <h1 className='flex items-center gap-1 font-bold text-accent-600 dark:text-accent-400'>
                 <LuCalendar className='text-2xl' />
                 <span>تاریخ اقامت خود را انتخاب کنید</span>
               </h1>
